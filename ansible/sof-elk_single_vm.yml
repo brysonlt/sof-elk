@@ -37,7 +37,7 @@
     - epel_repo
     - rpmfusion_repo
     - elastic_repo
-    - ivs_repo
+#    - ivs_repo
     - sof-elk_base
     - elasticsearch
     - cerebro
