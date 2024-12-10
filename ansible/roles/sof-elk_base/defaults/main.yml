@@ -1,13 +1,13 @@
 ---
 base_yum_packages:
-  - GeoIP
+#  - GeoIP
   - at
   - bc
   - bind-utils
   - bzip2
   - cifs-utils
-  - deltarpm
-  - exfat-utils
+  - https://dl.fedoraproject.org/pub/fedora/linux/releases/41/Everything/x86_64/os/Packages/d/deltarpm-3.6.5-1.fc41.x86_64.rpm
+  - exfatprogs
   - gcc
   - https://github.com/maxmind/geoipupdate/releases/download/v4.10.0/geoipupdate_4.10.0_linux_386.rpm
   - git
@@ -25,21 +25,21 @@ base_yum_packages:
   - p7zip
   - psmisc
   - python-devel
-  - python2-pip
+  - https://repo.almalinux.org/almalinux/8/AppStream/x86_64/os/Packages/python2-pip-9.0.3-19.module_el8.6.0+2781+fed64c13.noarch.rpm
   - python-requests
   - python-six
   - python-firewall
   - python3
   - python3-devel
   - python3-pip
-  - python36-six
+  - python3-six
   - rpmdevtools
   - tcpdump
   - unzip
   - vim-enhanced
   - wget
   - whois
-  - yum-plugin-post-transaction-actions
+#  - yum-plugin-post-transaction-actions
   - yum-utils
   - firewalld
   - tree
