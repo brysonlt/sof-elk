@@ -21,9 +21,7 @@
   when: disable_root | bool
 
 - name: Clear YUM cache
-  command: 'yum clean all'
-  args:
-    warn: false
+  command: 'dnf clean all'
   tags: sof-elk_base
 
 - name: Install core RPM set via YUM
