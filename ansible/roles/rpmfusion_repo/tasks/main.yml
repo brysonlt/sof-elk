@@ -4,18 +4,22 @@
     path: '{{ rpmfusion_repofile_path }}'
   register: rpmfusion_repofile_result
 
+- name: Install Distribution GPG Keys
+  dnf:
+    name: 'distribution-gpg-keys'
+    state: present
+
+- name: Import RPM Fusion GPG key
+  rpm_key:
+    key: '{{ rpmfusion_repo_gpg_key_file }}'
+    state: present
+
 - name: Install RPM Fusion repo
   yum:
     name: '{{ rpmfusion_repo_url }}'
     state: present
   when: not rpmfusion_repofile_result.stat.exists
   register: yum_repo_installed
-
-- name: Import RPM Fusion GPG key
-  rpm_key:
-    key: '{{ rpmfusion_repo_gpg_key_file }}'
-    state: present
-  when: not rpmfusion_repofile_result.stat.exists
 
 - name: Limit RPM Fusion packages
   ini_file:
